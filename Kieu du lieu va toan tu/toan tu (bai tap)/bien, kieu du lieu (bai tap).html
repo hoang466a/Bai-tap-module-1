@@ -23,8 +23,68 @@
 <td>Điểm tổng:<input type="text" name="điểm tổng" id="tong" readonly="readonly"></td>
 <td><button onclick="button()">tinh diem</button></td>
 </table>
-
 <script src="tinhdiemtongvatrungbinh.js">
 </script>
+
+
+<br><br><br>
+<table class="tablestyle"  >
+    <h2 style="width: 600px;text-align: center;">BẢNG ĐỔI ĐỘ C->F</h2>
+<tr>
+<td>Nhập vào độ C:<input type="text" name="độ C" id="doC"></td>
+<td>---></td>
+<td>Độ F:<input type="text" name="độ F" id="doF" readonly="readonly"></td>
+<td><button onclick="button1()">Đổi độ</button></td>
+</tr>
+</table>
+<script>
+    function button1()
+    {
+    let DOC=document.getElementById("doC").value;
+    parseInt(DOC);
+    let doF=((9*DOC)+160)/5;
+    document.getElementById("doF").value=doF;}
+</script>
+
+
+<br><br><br>
+<table class="tablestyle"  >
+    <h2 style="width: 600px;text-align: center;">TÍNH DIỆN TÍCH HÌNH TRÒN</h2>
+<tr>
+<td>Nhập vào bán kính hình tròn:<input type="text" name="bán kính" id="bankinh"></td>
+<td>Diện tích hình tròn:<input type="text" name="diện tích" id="dientich" readonly="readonly"></td>
+<td><button onclick="button2()">Tính</button></td>
+</tr>
+</table>
+<script>
+    function button2()
+    {
+    let BanKinh=document.getElementById("bankinh").value;
+    parseInt(BanKinh);
+    let DienTich=Math.pow(BanKinh,2)*Math.PI;
+    document.getElementById("dientich").value=DienTich;}
+</script>
+
+
+
+<br><br><br>
+<table class="tablestyle"  >
+    <h2 style="width: 600px;text-align: center;">TÍNH CHU VI TRÒN</h2>
+<tr>
+<td>Nhập vào bán kính hình tròn:<input type="text" name="bán kính2" id="bankinh2"></td>
+<td>Chu vi hình tròn:<input type="text" name="chu vi" id="chuvi" readonly="readonly"></td>
+<td><button onclick="button3()">Tính</button></td>
+</tr>
+</table>
+<script>
+    function button3()
+    {
+    let BanKinh2=document.getElementById("bankinh2").value;
+    parseInt(BanKinh2);
+    let ChuVi=2*Math.PI*BanKinh2;
+    document.getElementById("chuvi").value=ChuVi;}
+</script>
+
+
 </body>
 </html>
