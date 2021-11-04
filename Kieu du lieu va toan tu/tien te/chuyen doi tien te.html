@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .tablestyle{
+            text-align: center;width:600px;
+            border-collapse: collapse;
+            border: 1cm;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table class="tablestyle"  >
+        <h2 style="width: 600px;text-align: center;">BẢNG QUY ĐỔI TIỀN TỆ</h2>
+    <tr>
+    <td>Amount</td>
+    <td>From Currency</td>
+    <td>To Currency</td>
+    <td></td>
+    </tr>
+
+
+    <tr>
+    <td><input type="text" name="Amount" id="amount"></td>
+    <td><select name="đồng tiền" value="dong tien" id="tien1" style="width: 100px;">
+        <option name="tiền usd" value="USD" id="USD">USD</option>
+        <option name="tiền vnd" value="VND" id="VND">VND</option>
+    </select></td>
+    <td><select name="đồng tiền" value="dong tien" id="tien2" style="width: 100px;">
+        <option name="tien usd" value="USD">USD</option>
+        <option name="tien vnd" value="VND">VND</option>
+    </select>
+    </td>
+    <td><button name="button" onclick="button()">CONVERT</button></td>
+    </tr>
+
+    <tr>
+        <td><input type="text" name="Result" id="result" readonly="readonly"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    
+<script>
+function button()
+{
+    let soluong=document.getElementById("amount").value
+    let vao=document.getElementById("tien1").value;
+    let ra=document.getElementById("tien2").value;
+    soluong=parseInt(soluong);
+    alert(vao);
+    alert(ra);
+    let Result;
+    if (vao==USD && ra==VND)
+    {
+        Result=soluong*23000+VND;
+    }
+    else if(vao==VND && ra==USD)
+    {
+        Result=soluong/23000+USD;
+    }
+    else{
+        Result=soluong;
+    }
+    
+    document.getElementById("result").value=Result;
+}
+</script>
+
+
+
+</body>
+</html>
