@@ -51,20 +51,22 @@ function button()
     let vao=document.getElementById("tien1").value;
     let ra=document.getElementById("tien2").value;
     soluong=parseInt(soluong);
-    alert(vao);
-    alert(ra);
+    
+    
     let Result;
-    if (vao==USD && ra==VND)
+    if (vao=="USD" && ra==="VND")
     {
-        Result=soluong*23000+VND;
+        Result=soluong*23000+" VND";
     }
-    else if(vao==VND && ra==USD)
+    else if(vao=="VND" && ra=="USD")
     {
-        Result=soluong/23000+USD;
+        Result=soluong/23000+" USD";
     }
     else{
-        Result=soluong;
+        
+        Result=soluong+" "+vao;
     }
+    
     
     document.getElementById("result").value=Result;
 }
