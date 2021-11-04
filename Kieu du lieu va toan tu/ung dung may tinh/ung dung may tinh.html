@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="number1" id="number1"> 
+<input type="text" name="number2" id="number2">
+<input type="text" name="output" id="output" readonly="readonly"><br>
+<button name="multiplay" value="+" onclick="cong()">Addition(+)</button>
+<button name="multiplay" value="-" onclick="tru()">Subtraction(-)</button>
+<button name="multiplay" value="*" onclick="nhan()">Multiplication(*)</button>
+<button name="multiplay" value="/" onclick="chia()">Division(/)</button>
+<script>
+    function cong()
+    {
+        let a=document.getElementById("number1").value;
+        let b=document.getElementById("number2").value;
+        a=parseInt(a);b=parseInt(b);
+        let Sum=a+b;
+        document.getElementById("output").value=Sum;
+    }
+    function tru()
+    {
+        let a=document.getElementById("number1").value;
+        let b=document.getElementById("number2").value;
+        a=parseInt(a);b=parseInt(b);
+        let Subtract=a-b;
+        document.getElementById("output").value=Subtract;
+    }
+    function nhan()
+    {
+        let a=document.getElementById("number1").value;
+        let b=document.getElementById("number2").value;
+        a=parseInt(a);b=parseInt(b);
+        let Multipli=a*b;
+        document.getElementById("output").value=Multipli;
+    }
+    function chia()
+    {
+        let a=document.getElementById("number1").value;
+        let b=document.getElementById("number2").value;
+        a=parseInt(a);b=parseInt(b);
+        let Divison=a/b;
+        document.getElementById("output").value=Divison;
+    }
+</script>
+</body>
+</html>
