@@ -82,4 +82,12 @@ else if(hoahong>0)
 
 let phutgoi=prompt("Nhập vào số phút gọi của b (phút): ");
 phutgoi=parseInt(phutgoi);
-alert("cước điện thoại của bạn phải trả là (VND): "+ phutgoi*870+" VND");
+if(phutgoi>0)
+{
+    alert("cước điện thoại của bạn phải trả là (VND): "+ phutgoi*870+" VND");
+}
+else
+{
+    alert("thông tin nhập vào không hợp lệ!");
+}
+
