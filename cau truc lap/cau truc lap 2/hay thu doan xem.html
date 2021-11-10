@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hay thu doan xem</title>
+</head>
+<body>
+    <h2>Hãy thử đoán xem</h2>
+    <button onclick="play()">Chơi</button>
+    <script>
+        function play()
+        {
+            let count=3;
+            let flag1=null;
+            let flag2=null;
+            do
+            {
+            flag1=parseInt(prompt("Chào mừng đến với trò chơi! mời lựa chọn khoảng số mà bạn muốn đoán, xin nhập vào giá trị dưới: "));
+            flag2=parseInt(prompt("xin nhập vào khoảng trên: "));
+            if(flag2<flag1)
+            {
+                alert("khoảng trên của dãy phải lớn hơn khoảng dưới của dãy, mời nhập lại!");
+            }
+            }while(flag2<flag1)
+            let random=Math.floor(Math.random() * flag2) + flag1;
+            alert(random);
+            while(count>0)
+            {
+                let choice=parseInt(prompt("Nhập vào giá trị bạn muốn dự đoán, lưu ý: bạn có tối đa "+ count+ " lần đoán!"));    
+                if(choice==random)
+                {
+                    alert("chúc mừng bạn đã đoán đúng")
+                    break;
+                }
+                else
+                {
+                    count--;
+                    if(choice<random)
+                    {
+                        alert("số bạn nhập vào nhỏ hơn so với kết quả, hãy dự đoán lại!")
+                    }
+                    else
+                    {
+                        alert("số bạn nhập vào lớn hơn so với kết quả, hãy dự đoán lại!")
+                    }
+                    
+                }
+            }
+            
+
+            
+        }
+    </script>
+</body>
+</html>
