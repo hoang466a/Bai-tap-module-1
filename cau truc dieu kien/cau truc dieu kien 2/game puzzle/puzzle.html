@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+</head>
+<body>
+    <img id="img1" src="https://tinyurl.com/f2hxzbvk" onclick="click1()" style="width:400px; height: 400px;">
+    <img id="img2" src="https://tinyurl.com/bppbupxc" onclick="click2()" style="width:400px; height: 400px;">
+    <img id="img3" src="https://tinyurl.com/4h3sj66w" onclick="click3()" style="width:400px; height: 400px;">
+    <script>
+        let img1=document.getElementById("img1");
+        let img2=document.getElementById("img2");
+        let img3=document.getElementById("img3");
+        function click1()
+        {
+            if(img1.getAttribute("src")==="https://tinyurl.com/f2hxzbvk")
+            {
+                img1.src="https://tinyurl.com/bppbupxc";
+            }
+            else if(img1.getAttribute("src")==="https://tinyurl.com/bppbupxc")
+            {
+                img1.src="https://tinyurl.com/4h3sj66w";
+            }
+            else
+            {
+                img1.src="https://tinyurl.com/f2hxzbvk";
+            }
+            check();
+        }
+
+        function click2()
+        {
+            if(img2.getAttribute("src")==="https://tinyurl.com/f2hxzbvk")
+            {
+                img2.src="https://tinyurl.com/bppbupxc";
+            }
+            else if(img2.getAttribute("src")==="https://tinyurl.com/bppbupxc")
+            {
+                img2.src="https://tinyurl.com/4h3sj66w";
+            }
+            else
+            {
+                img2.src="https://tinyurl.com/f2hxzbvk";
+            }
+            check();
+        }
+        function click3()
+        {
+            if(img3.getAttribute("src")==="https://tinyurl.com/f2hxzbvk")
+            {
+                img3.src="https://tinyurl.com/bppbupxc";
+            }
+            else if(img3.getAttribute("src")==="https://tinyurl.com/bppbupxc")
+            {
+                img3.src="https://tinyurl.com/4h3sj66w";
+            }
+            else
+            {
+                img3.src="https://tinyurl.com/f2hxzbvk";
+            }
+            check();
+        }
+
+
+        function check()
+        {
+            if(img1.src==="https://tinyurl.com/f2hxzbvk" 
+            && img2.src==="https://tinyurl.com/f2hxzbvk" 
+            && img3.src==="https://tinyurl.com/f2hxzbvk")
+            {
+                alert("bún cá");
+            }
+
+            else if(img1.src==="https://tinyurl.com/4h3sj66w" 
+            && img2.src==="https://tinyurl.com/4h3sj66w" 
+            && img3.src==="https://tinyurl.com/4h3sj66w")
+            {
+                alert("lẩu thịt bò");
+            }
+
+            else if(img1.src==="https://tinyurl.com/bppbupxc" 
+            && img2.src==="https://tinyurl.com/bppbupxc" 
+            && img3.src==="https://tinyurl.com/bppbupxc" )
+            {
+                alert("cơm rang")
+            }
+        }
+    </script>
+</body>
+</html>
