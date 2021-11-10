@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luyen tap vong lap 2</title>
+</head>
+<body>
+    <h2>Bài 1</h2>
+    <script>
+        for(let i=1;i<=100;i++)
+        {
+            console.log(i);
+            if(i==99)
+            {
+                alert("đã hoàn thành vòng lặp!");
+            }
+        }
+    </script>
+
+
+    <h2>Bài 2</h2>
+    <script>
+        let temp=null;
+        do{
+            let temp=parseInt(prompt("Nhập vào nhiệt độ hiện tại: "));
+            if(temp>100)
+            {
+                alert("hãy giảm nhiệt độ xuống!");
+            }
+            else if(temp<20)
+            {
+                alert("hãy tăng nhiệt độ lên!");
+            }
+            else if(temp<=100 &&temp>=20)
+            {
+                alert("nhiệt độ hợp lý!");
+                break;
+            }
+        }while(temp>100||temp<20)
+    </script>
+
+
+    <h2>Bài 3+4+5:</h2>
+    <script>
+        console.log("bài 3+4+5:")
+        let count=3;
+        let num1=0;
+        let num2=1;
+        num3=num1+num2;
+        let sum=num1+num2+num3;
+        console.log(num1);
+        console.log(num2);
+        let count1=0;
+        while(count<=20)
+        {
+            console.log(num3);
+            num1=num2;
+            num2=num3;
+            num3=num1+num2;
+            sum+=num3;
+            if(num3%5==0)
+            {
+               count1++;
+               if(count1==1)
+               {
+                console.log("số đầu tiên của dãy Fibonacci chia hết cho 5 là: "+num3)
+               }
+            }
+            count++
+        }
+        console.log("tổng 20 số đầu tiên dãy Fibonacci là: "+sum);
+    </script>
+    \
+    <h2>Bài 6</h2>
+    <script>
+        console.log("Bài 6:");
+        let num=0;
+        let sum1=0;
+        let count2=1;
+        while(count2<=30)
+        {
+            num++;
+            if(num%7==0)
+            {
+                count2++;
+                sum1+=num;
+            }
+        }
+        console.log("Tổng 30 số tự nhiên đầu tiên chia hết cho 7 là: "+sum1);
+    </script>
+
+<h2>Bài 7</h2>
+<script>
+    console.log("Bài 7:");
+    for(let j=1;j<=100;j++)
+    {
+        if(j%3==0 && j%5==0)
+        {
+            console.log("FizzBuzz");
+        }
+        else if (j%3==0)
+        {
+            console.log("Fizz");
+        }
+        else if (j%5==0)
+        {
+            console.log("Buzz");
+        }
+        else
+        {
+            console.log(j);
+        }
+    }
+</script>
+
+</body>
+</html>

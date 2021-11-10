@@ -8,27 +8,23 @@
 </head>
 <body>
     <script>
+        
+        let num=2;
         let count=1;
-        let num=0;
         while(count<=20)
         {
-            let count1=0;
-            for(let i=0;i<=num;i++)
+            let check=true;
+            for(let i=2;i<=Math.sqrt(num);i++)
             {
                 if(num%i==0)
                 {
-                    count1++;
-                }
-                if(count1>2)
-                {
+                    check=false;
                     break;
-                }
-            }
-            if(count1==2)
-            {
+                }}
+                if(check==true)
+                {
                 console.log(num)
-                count++;
-            }
+                count++;}
             num++;
         }
 
