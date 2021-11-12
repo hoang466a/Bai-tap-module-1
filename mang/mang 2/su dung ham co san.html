@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng hàm có sẵn</title>
+</head>
+<body>
+    <h2>bài 1</h2>
+    <script>
+        console.log("bài 1");
+        myColor = ["Red", "Green", "White", "Black"];
+        console.log(myColor);
+        console.log(myColor.join(","));
+    </script>
+    <h2>bài 2</h2>
+    <script>
+        console.log("bài 2");
+        let num=window.prompt();
+        let str = num.toString();
+        let result = [str[0]];
+  
+        for (let i=1;i<str.length;i++)
+        {
+            if((str[i]%2===0)&&(str[i-1]%2===0))
+            {
+                result.push('-',str[i]);
+            }
+            else
+            {
+                result.push(str[i]);
+            }}
+        console.log(result.join(''));
+    </script>
+
+<h2>bài 3</h2>
+<script>
+    console.log("bài 3");
+    let input1=prompt("nhập vào chuỗi kí tự muốn biến đổi");
+    let LOWER="thequickbrownfoxjumpsoverthelazydog";
+    let UPPER="THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG";
+    let input=input1.split('');
+    let result1=[];
+    for (let i=0; i<input.length;i++)
+    {
+        if(UPPER.indexOf(input[i]) !== -1)
+        {
+        result1.push(input[i].toLowerCase());
+        }
+        else if(LOWER.indexOf(input[i]) !== -1)
+        {
+        result1.push(input[i].toUpperCase());
+        }
+        else 
+        {
+        result1.push(input[i]);
+        }
+    }
+    console.log(result1.join(''));
+</script>
+    
+</body>
+</html>

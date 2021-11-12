@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ điển</title>
+</head>
+<body>
+    <h2> từ vựng về các loài động vật </h2>
+    
+    <script>
+        let eng=["dog","cat","snake","turtle","bird"];
+        let viet=["chó","mèo","rắn","rùa","chim"];
+      
+        let flag=false;
+        let i=0;
+        alert("từ vựng về các loài động vật");
+        alert("một số từ tiếng anh sẵn có: dog, cat, snake, turtle, bird");
+        let input=prompt("nhập vào từ tiếng anh cần tìm: ");
+            for(i=0;i<eng.length;i++)
+            {
+                if (input===eng[i])
+                {
+                    alert(viet[i]);
+                    flag=true;
+                    break;
+                }
+            }
+            if(flag==false)
+            {
+                alert("không tìm thấy");
+            }        
+    </script>
+</body>
+</html>
