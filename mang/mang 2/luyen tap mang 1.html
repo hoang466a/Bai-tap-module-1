@@ -20,7 +20,7 @@
                 count++;
             }
         }
-        console.log("mảng có "+count+" phần tử lớn hơn hoặc bằng 10");
+        console.log("bài 1: mảng có "+count+" phần tử lớn hơn hoặc bằng 10");
         let max=a[0];
         for(i=0;i<a.length;i++)
         {
@@ -30,7 +30,7 @@
                 count=i;
             }
         }
-        console.log("phần tử có giá trị lớn nhất của chương trình nằm ở vị trí "+count+" ,giá trị là: "+max);
+        console.log("bài 2: phần tử có giá trị lớn nhất của chương trình nằm ở vị trí "+count+" ,giá trị là: "+max);
         console.log(a);
 
         for(i=0;i<10;i++)
@@ -59,20 +59,22 @@
             }
             sum+=a[i];
         }
-        console.log("phần tử có giá trị lớn nhất của chương trình có giá trị là: "+max);
+        console.log("bài 3: phần tử có giá trị lớn nhất của chương trình có giá trị là: "+max);
         console.log("giá trị trung bình của các phần tử trong mảng là: "+(sum/length));
         a.reverse();
-        console.log("mảng sau khi đảo ngược là: ");
+        console.log("bài 4: mảng sau khi đảo ngược là: ");
         console.log(a);
-        console.log("số phần tử < 0 trong mảng là: "+count);
+        console.log("bài 5: số phần tử < 0 trong mảng là: "+count);
         for(i=0;i<length;i++)
         {
             a.pop();
         }
-        alert("chương trình kiểm tra số V có nằm trong mảng có 10 phần tử hay không, hãy nhập vào");
+        alert("bài 6: chương trình kiểm tra số V có nằm trong mảng có 10 phần tử hay không");
         let v=parseInt(prompt("nhập vào số V cần kiểm tra: "));
         let check=false;
-        for(;i<a.length;i++)
+        length=10;
+        alert("tạo mảng 10 phần tử: ");
+        for(i=0;i<length;i++)
         {
             a[i]=parseInt(prompt("nhập phần tử thứ "+i));
             if(a[i]==v)
@@ -80,14 +82,45 @@
                 check=true;
             }
         }
+        console.log(a);
+        console.log("số v=" +v);
         if(check==true)
         {
-            alert("V is in the array");
+            console.log("V is in the array");
         }
         else
         {
-            alert("V is not in the array");
+            console.log("V is not in the array");
         }
+        let j=0;
+        alert("bài 8: Sắp xếp mảng theo thứ tự giảm dần")
+        a.sort(function(a, b){return b - a});
+        console.log("Xuất mảng theo thứ tự giảm dần: "+a);
+        alert("bài 7: chương trình kiểm tra số V có nằm trong mảng có 10 phần tử hay không, nếu có thì xóa V đi");
+        for(i=0;i<a.length;i++)
+        {
+            if(a[i]==v)    
+            {
+                for(j=i; j<a.length-1;j++)
+                {
+                    a[j]=a[j+1];
+                }
+                a[a.length-1]=0;
+                a.length--;
+            }
+        }
+        console.log(a);
+        alert("bài 9: chương trình khởi tạo/nhập 2 mảng a và b số nguyên gồm 10 phần tử, mảng c chứa các phần tử nối của mảng a và b");
+        let b=new Array(10);
+        for(i=0;i<10;i++)
+        {
+            a[i]=parseInt(prompt("nhập phần tử thứ "+i+" mảng a"));
+            b[i]=parseInt(prompt("nhập phần tử thứ "+i+" mảng b"));
+        }
+        let c=new Array(20);
+        c=a.concat(b);
+        console.log(c);
+
     </script>
 </body>
 </html>
