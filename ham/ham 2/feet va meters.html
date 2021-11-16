@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="tablestyle"  >
+        <h2 style="width: 600px;text-align: center;">BẢNG QUY ĐỔI CHIỀU DÀI</h2>
+    <tr>
+    <td>Amount</td>
+    <td>From Currency</td>
+    <td>To Currency</td>
+    <td></td>
+    </tr>
+
+
+    <tr>
+    <td><input type="number" name="amount" id="amount"></td>
+    <td><select name="length1" value="length1" id="length1" style="width: 100px;">
+        <option name="meters" value="meters" id="meters">meters</option>
+        <option name="feet" value="feet" id="feet">feet</option>
+    </select></td>
+    <td><select name="length2" value="length2" id="length2" style="width: 100px;">
+        <option name="meters" value="meters" id="meters">meters</option>
+        <option name="feet" value="feet" id="feet">feet</option>
+    </select>
+    </td>
+    <td><button name="trans" onclick="button()">CONVERT</button></td>
+    </tr>
+
+    <tr>
+        <td><p>Kết quả sau khi đổi: <span id="result" ></span> </p></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    
+<script>
+function footToMeter(amount) 
+{
+    let Result=amount*3.279+" meter";
+    document.getElementById("result").innerHTML=Result;
+}
+function meterToFeet(amount) 
+{
+    let Result=amount*0.305+" feet";
+
+    document.getElementById("result").innerHTML=Result;
+}
+
+function button()
+{
+    let amount=document.getElementById("amount").value
+    let input=document.getElementById("length1").value;
+    let output=document.getElementById("length2").value;
+    amount=parseInt(amount);
+    
+    
+    if (input==="meters" && output==="feet")
+    {
+        meterToFeet(amount);
+    }
+    else if(input==="feet" && output==="meters")
+    {
+        footToMeter(amount);
+    }
+    else{
+        document.getElementById("result").innerHTML=amount+" "+output;
+    }
+    
+}</script></body>
+</html>
