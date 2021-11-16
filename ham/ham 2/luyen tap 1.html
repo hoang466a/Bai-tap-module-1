@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luyện tập 1</title>
+</head>
+<body>
+    <button onclick="alertMessage()">Bài 1</button>
+    <script>
+        function alertMessage()
+        {
+            alert("xin chào!");
+        }
+    </script>
+    <br><br>
+    <h3>Bài 2:</h3>
+    <input type="number" id="input" oninput="bai2()" onchange="bai2()" placeholder="ex: 0, 1, 2, 3,..." >
+    <input type="text" id="output" readonly>
+    
+    <script>
+       function bai2()
+        {
+            
+            let num=parseInt(document.getElementById("input").value);
+            document.getElementById("output").value=num+1;
+        } 
+    </script>
+    <h3>Bài 3</h3>
+    <p>số đầu tiên</p>
+    <input type="number" id="number1" placeholder="ex: 0, 1, 2, 3,..." >
+    <p>số thứ hai</p>
+    <input type="number" id="number2" placeholder="ex: 0, 1, 2, 3,..." >
+    <button onclick="bai3()">Nhấn vào đây!</button>
+    <script>
+        function bai3()
+        {
+            let number1=parseInt(document.getElementById("number1").value);
+            let number2=parseInt(document.getElementById("number2").value);
+            if(number1>number2)
+                alert("số thứ nhất lớn hơn số thứ hai!");
+            else
+                alert(number1+number2);
+        }
+    </script>
+    <h3>Bài 4</h3>
+    <script>
+        function addNumbers() {
+    let result=0;
+    let firstNum = 4;
+    let secondNum = 8;
+    result = firstNum + secondNum;
+    return result;
+    }
+    let result = 0;
+    alert("bài 4: kết quả của result trước khi gọi hàm là: "+result);
+    result = addNumbers(); 
+    alert("bài 4: kết quả của sau khi gọi hàm là: "+result);
+    </script>
+
+
+    <h3>Bài 5</h3>
+    <p>Star names:  Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe and Regulus</p>
+    <p>Constellation names: Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major and Leo</p>
+    <button type="button" onclick="star()">ấn vào để nhập tên ngôi sao</button>
+    <script>
+        function star()
+        {
+        let name_star=prompt("nhập vào tên ngôi sao");
+        let Star=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let Constellation=["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        for(let i=0;i<Star.length;i++)
+        {
+            if(name_star===Star[i])
+            {
+                alert("ngôi sao "+Star[i]+" thuộc chòm sao "+Constellation[i]);
+                break;
+            }
+            else{
+                alert("hệ thống dữ liệu hiện không có thông tin về ngôi sao mà bạn đang tìm, xin nhập lại!")
+                break;
+            }
+        }  
+    }
+    </script>
+</body>
+</html>
