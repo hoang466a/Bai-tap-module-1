@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>luyen tap 2</title>
+    <title>Document</title>
 </head>
 <body>
-    <input type="text" id="input" >
-    <button onclick="isPalindrome(document.getElementById('input').value,num)">kiểm tra đối xứng</button>
     <script>
-        function isPalindrome(s,num)
-        {
-            console.log(s);
-            if(s.length<=1)
-            {
+        function kiemTraDoiXung(s){
+            if(s.length <= 1){
                 return true;
-            }
-
-            else if(s[0]!==s[b.length-1])
-            {
-                alert("the end!");
-                return false;
-            }
-            else if(s[0]===s[s.length-1])
-            {
-                s.shift();
-                s.pop();
-                return isPalindrome(s);
+            }else{
+                if(s[0] === s[s.length-1]){
+                    s.pop();
+                    s.shift()
+                    return kiemTraDoiXung(s)
+                }else{
+                    return false;
+                }
             }
         }
-        isPalindrome("abccba");
-        
+        let s = ["a","b","c","a","b","c"]
+        console.log(kiemTraDoiXung(s))
     </script>
 </body>
 </html>
