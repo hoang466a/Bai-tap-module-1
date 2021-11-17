@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luyen tap 2</title>
+</head>
+<body>
+    <h3>Bài 1</h3>
+    <button type="button" onclick="bai1()">nhấn vào để tính bình phương</button>
+    <h3>Bài 2</h3>
+    <button type="button" onclick="bai2()">nhấn vào để tính C và S hình tròn</button>
+    <h3>Bài 3</h3>
+    <button type="button" onclick="bai3()">nhấn vào để tính giai thừa</button>
+    <h3>Bài 4</h3>
+    <button type="button" onclick="bai4()">nhập vào một kí tự</button>
+    <h3>Bài 5</h3>
+    <button type="button" onclick="bai5()">nhập vào 3 số nguyên</button>
+    <h3>Bài 6</h3>
+    <button type="button" onclick="bai6()">nhập vào 1 số nguyên</button>
+    <h3>Bài 7</h3>
+    <button type="button" onclick="bai7()">nhập vào 2 số nguyên</button>
+    <h3>Bài 8</h3>
+    <button type="button" onclick="bai8()">nhập vào mảng số nguyên</button>
+    <h3>Bài 9</h3>
+    <button type="button" onclick="bai9()">nhập vào mảng số nguyên và ký tự</button>
+    <script>
+        function bai1()
+        {
+            let a=parseInt(prompt("xin nhập vào số cần bình phương"));
+            alert("số sau khi bình phương có kết quả: "+ (a*a));
+        }
+        function bai2()
+        {
+            a=parseInt(prompt("xin nhập vào bán kính hình tròn"));
+            alert("Chu vi hình tròn có kết quả là: "+(2*Math.PI*a));
+            alert("Diện tích hình tròn có kết quả là: "+(Math.PI*a*a));
+        }
+        function bai3()
+        {
+            a=parseInt(prompt("xin nhập số muốn tính giai thừa"));
+            for(let i=a-1;i>=2;i--)
+            {
+                a*=i;
+            }
+            alert("Kết quả sau khi giai thừa là: "+a);
+        }
+        function bai4()
+        {
+            let a=prompt("xin nhập vào một ký tự cần kiểm tra");
+            let number="0123456789";
+            if (number.indexOf(a)===-1)
+                alert(false);    
+            else
+            alert(true);    
+        }
+        function bai5()
+        {
+            let number_1=parseInt(prompt("xin nhập vào số thứ nhất"));
+            let number_2=parseInt(prompt("xin nhập vào số thứ hai"));
+            let number_3=parseInt(prompt("xin nhập vào số thứ ba"));
+            alert("Số có giá trị nhỏ nhất là: "+Math.min(number_1,number_2,number_3));
+        }
+        function bai6()
+        {
+            let a=parseInt(prompt("xin nhập vào số cần kiểm tra nguyên dương"));
+            if(a>0)
+            alert("số nhập vào là số nguyên dương");
+            else
+            alert("số nhập vào không phải số nguyên dương");
+        }
+        function bai7()
+        {
+            let number_1=parseInt(prompt("xin nhập vào số thứ nhất"));
+            let number_2=parseInt(prompt("xin nhập vào số thứ hai"));
+            let check=number_1;
+            number_1=number_2;
+            number_2=check;
+            alert("số thứ nhất sau đảo có giá trị: "+number_1);
+            alert("số thứ hai sau đảo có giá trị: "+number_2);
+        }
+        function bai8()
+        {
+            let number=parseInt(prompt("xin nhập vào số phần tử mảng"));
+            let arr=[];
+            for(let i=0;i<number;i++)
+            {
+                arr[i]=parseInt(prompt("nhập vào số phần tử thứ "+i+" của mảng"));
+
+            }
+            arr.reverse();
+            for(let i=0;i<number;i++)
+            {
+                alert("phần tử thứ "+i+" của mảng sau đảo ngược: "+arr[i]);
+            }
+        }
+        function bai9()
+        {
+            number=prompt("xin nhập vào số phần tử mảng");
+            let sym=prompt("xin nhập vào kí tự");
+            let count=0;
+            let arr=[];
+            for(let i=0;i<number;i++)
+            {
+                arr[i]=prompt("nhập vào số phần tử thứ "+i+" của mảng");
+                if(sym===arr[i])
+                    count++;
+            }
+
+            if(count>0)
+                console.log("ký tự "+sym+" xuất hiện "+count+" lần");
+            else
+                console.log("-1");
+
+        }
+
+    </script>
+</body>
+</html>
