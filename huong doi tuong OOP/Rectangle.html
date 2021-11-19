@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <canvas id="myCanvas" width="1000" height="1000" style="border:1px solid #000000;">
+    </canvas>
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+        let width=parseInt(prompt("Nhập vào chiều rộng: "));
+        let height=parseInt(prompt("Nhập vào chiều dài: "));
+        class Rectangle
+        {
+            constructor(width,height)
+            {
+                this.width=width;
+                this.height=height;
+            }
+            getArea()
+            {
+                return this.width*this.height;
+            }
+            getPerimeter()
+            {
+                return 2*(this.width+this.height);
+            }
+            getCanvas(width,height)
+            {
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.rect(50, 90, this.width, this.height);
+                ctx.strokeStyle = "red";
+                ctx.stroke();
+            }
+        }
+        let recTangle=new Rectangle(width,height);
+        recTangle.getCanvas(width,height);
+        document.write("<br>");
+        document.write("Diện tích hình chữ nhật là: "+recTangle.getArea()+'');
+        document.write("<br>");
+        document.write("Chu vi hình chữ nhật là: "+recTangle.getPerimeter());
+    </script>
+</body>
+</html>
