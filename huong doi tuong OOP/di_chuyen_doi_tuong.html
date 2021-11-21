@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Hero(image, top, left, size){
+  this.image = image;
+  this.top = top;
+  this.left = left;
+  this.size = size;
+
+  this.getHeroElement = function(){
+    return '<img width="'+ this.size + '"' +
+      ' height="'+ this.size + '"' +
+      ' src="' + this.image +'"' +
+      ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+  }
+
+  this.moveRight = function(){
+    this.left += 20;
+    console.log('ok: ' + this.left);
+  }
+
+}
+
+var hero = new Hero('__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__03__HT-Make-Roast-Chicken-LEAD-5v2-51de85b6d52a4691885f9d6680d958b1.jpeg', 20, 30, 200);
+
+function start(){
+  if(hero.left < window.innerWidth - hero.size){
+    hero.moveRight();
+  }
+  document.getElementById('game').innerHTML = hero.getHeroElement();
+  setTimeout(start, 500)
+}
+
+start();
+    </script>
+</body>
+</html>
