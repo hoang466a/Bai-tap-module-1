@@ -10,8 +10,23 @@
     <script>
         class Temperature
         {
-            constructor{}
+            constructor(Temperature)
+            {
+                this.Temperature=Temperature;
+            }
+            getF()
+            {
+                return (this.Temperature*(9/5)+32);
+            }
+            getK()
+            {
+                return this.Temperature+273.15;
+            }
         }
+        let a=new Temperature(25);
+        console.log("độ C -> độ F: "+a.getF());
+        console.log("độ C -> độ K: "+a.getK());
+
     </script>
 </body>
 </html>

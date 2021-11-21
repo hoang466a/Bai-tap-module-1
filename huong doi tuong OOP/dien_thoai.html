@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>NOKIA</h2>
+    <button onclick="nokia.turn_On_Off()">ON/OFF</button>
+    <button onclick="nokia.getBattery()">CAPACITY BATTERY</button>
+    <button onclick="nokia.chargeBattery()">CHARGE BATTERY</button>
+    <button onclick="sendMess(nokia,iphone)">SEND MESS</button>
+    <button onclick="nokia.outBox()">OUTBOX</button>
+    <button onclick="nokia.inBox()">INBOX</button>
+
+    <br><br><br><br>
+
+    <h2>IPHONE</h2>
+    <button onclick="iphone.turn_On_Off()">ON/OFF</button>
+    <button onclick="iphone.getBattery()">CAPACITY BATTERY</button>
+    <button onclick="iphone.chargeBattery()">CHARGE BATTERY</button>
+    <button onclick="sendMess(iphone,nokia)">SEND MESS</button>
+    <button onclick="iphone.outBox()">OUTBOX</button>
+    <button onclick="iphone.inBox()">INBOX</button>
+
+    <script>
+        class Telephone
+        {
+            constructor(name,status,meMory_send,meMory_receive,battery)
+            {
+                this.name=name;
+                this.status=status;
+                this.meMory_receive=meMory_receive;
+                this.meMory_send=meMory_send;
+                this.battery=battery;
+            }
+
+
+            chargeBattery(){
+                if(this.battery==100)
+                    alert("Pin đã đầy 100 đơn vị, không thể nạp thêm!");
+                else if(this.battery<100 && this.battery>=0){
+                    this.battery++;
+                    if(this.battery==100)
+                        alert("Pin đã đầy 100 đơn vị, không thể nạp thêm!");
+                    else
+                    alert("Pin đang được sạc, còn "+(100-this.battery)+" % pin nữa là đầy");}}
+            
+            inBox()
+            {
+                this.battery--;
+                if(this.battery==0||this.status==false)
+                {
+                    alert("Máy đang sập nguồn do hết pin hoặc chưa bật lên, đề nghị sạc hoặc bật lên để dùng!");
+                }
+                else if(this.battery>0 && this.status==true)
+                alert("tin nhắn "+this.name+" đã nhận: "+this.meMory_receive);
+            }
+
+            outBox()
+            {
+                this.battery--;
+                if(this.battery==0||this.status==false)
+                {
+                    alert("Máy đang sập nguồn do hết pin hoặc chưa bật lên, đề nghị sạc hoặc bật lên để dùng!");
+                }
+                else if(this.battery>0 && this.status==true)
+                alert("tin nhắn "+this.name+" đã gửi: "+this.meMory_send);
+            }
+
+            getBattery()
+            {
+                this.battery--;
+                if(this.battery==0||this.status==false)
+                {
+                    alert("Máy đang sập nguồn do hết pin hoặc chưa bật lên, đề nghị sạc hoặc bật lên để dùng!");
+                }
+                else if(this.battery>0 && this.status==true)
+                alert("Pin còn "+this.battery+" %");
+            }
+
+                    
+            turn_On_Off(){
+                this.battery--;
+                if(this.status){
+                    let check=confirm("hiện máy đang bật, bạn có muốn tắt máy?");
+                    if(check)
+                    {alert("đã tắt máy!")
+                    this.status=false;
+                    }
+                    else
+                    {alert("máy vẫn đang bật!")
+                    }
+                }
+                else{
+                    let check=confirm("hiện máy đang tắt, bạn có muốn bật máy?");
+                    if(check){
+                    alert("đã bật máy!");
+                    this.status=true;}
+                    else{
+                    alert("máy vẫn đang tắt!");}}}
+
+
+
+            send_Mes_to(mobile)
+            {
+    
+                this.battery--;
+                if(this.battery==0||this.status==false)
+                {
+                    alert("Máy đang sập nguồn do hết pin hoặc chưa bật lên, đề nghị sạc hoặc bật lên để dùng!");
+                }
+                else if(this.battery>0 && this.status==true)
+                {
+                this.meMory_send=prompt("Nhập vào tin nhắn muốn gửi từ "+this.name+" tới "+mobile.name);
+                let check=confirm("bạn có muốn gửi không?");
+                if(check)
+                {
+                    mobile.meMory_receive=this.meMory_send;
+                    alert(mobile.name+" đã nhận được tin nhắn");
+                }
+                else{
+                    alert("tin nhắn không được gửi, đã lưu vào hộp thư!");
+                }}
+            }
+
+        }
+        let nokia=new Telephone("nokia",true,null,null,100);
+        let iphone=new Telephone("iphone",true,null,null,100);
+        function sendMess(nokia,iphone)
+        {
+            nokia.send_Mes_to(iphone);
+        }
+
+    </script>
+    
+</body>
+</html>
