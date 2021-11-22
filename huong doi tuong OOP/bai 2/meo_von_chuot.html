@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class Animal {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+    }
+    class Rat extends Animal {
+        constructor(name, weight, speed, status) {
+            super(name, weight, speed);
+            this.status = status; 
+        }
+        getStatus() {
+            return this.status;
+        }
+        setStatus(status) {
+            this.status = status;
+        }
+        growl() {
+            console.log(this.name + ": Chit, chit");
+        }
+    }
+    class Cat extends Animal {
+        constructor(name, weight, speed) {
+            super(name, weight, speed);
+        }
+
+        growl() {
+            console.log(this.name + ": Meo, meo");
+        }
+        catchRat(rAt) {
+            if (this.speed > rAt.speed) {
+                this.eatRat(rAt);
+            } else {
+                console.log("Chuột chạy nhanh hơn, không bắt được");
+            }
+        }
+        eatRat(rAt) {
+            if (rAt.status == true) {
+                this.weight += rAt.weight;
+                rAt.status = false;
+                console.log("Chuột đã bị ăn, khối lượng mèo bây giờ là: " + this.weight);
+            } else {
+                console.log("Chuột chết rồi, không ăn được!");
+            }
+        }
+    }
+    let rAt = new Rat("Jerry", 3, 15, false);
+    let cAt = new Cat("Tom", 7, 10);
+    rAt.setStatus(true);
+    console.log(rAt.getStatus());
+    // console.log(catO);
+    rAt.growl();
+    cAt.growl();
+    cAt.catchRat(rAt);
+    </script>
+</body>
+</html>
