@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>ĐIỀU KHIỂN</h2>
+    <button onclick="Remote.change_Channel(tivi)">CHUYỂN KÊNH</button>
+    <button onclick="Remote.change_Volume(tivi)">ÂM LƯỢNG</button>
+    <button onclick="Remote.on_Off_TV(tivi)">BẬT/TẮT</button>
+
+
+<br><br><br><br>
+    <h2>TIVI</h2>
+    <button onclick="tivi.change_Channel()">CHUYỂN KÊNH</button>
+    <button onclick="tivi.change_Volume()">ÂM LƯỢNG</button>
+    <button onclick="tivi.on_Off_TV()">BẬT/TẮT</button>
+    <button onclick="tivi.status_TV()">TRẠNG THÁI</button>
+<script>
+    class remote
+    {
+        constructor(num)
+        {
+            this.num=num;
+        }
+
+        on_Off_TV(TV)
+        {
+            if(TV.status==true)
+            {
+            TV.status=false;
+            alert("Bạn đã dùng remote tắt TV!");
+            }
+            else if(TV.status==false)
+            {
+            TV.status=true;
+            alert("Bạn đã dùng remote bật TV!");
+            }
+        }
+
+        change_Channel(TV)
+        {
+            if(TV.status==false)
+            {
+                alert("tivi đang tắt, hãy bật TV để xem!");
+            }
+            else{
+            this.num=prompt("bạn muốn dùng remote đổi đến kênh nào?");
+            TV.channel=this.num;
+            alert("TV đã đổi đến kênh "+TV.channel);}
+        }
+        change_Volume(TV)
+        {
+            if(TV.status==false)
+            {
+                alert("tivi đang tắt, hãy bật TV để xem!");
+            }
+            else{
+            this.num=prompt("bạn muốn dùng remote điều chỉnh âm lượng là bao nhiêu?");
+            TV.volume=this.num;
+            alert("âm lượng của TV là "+TV.volume);}
+        }
+    }
+
+
+
+    class TV
+    {
+        constructor(channel,volume,status) {
+            this.channel=channel;
+            this.volume=volume;
+            this.status=status;
+        }
+        on_Off_TV()
+        {
+            if(this.status==true)
+            {
+            
+            this.status=false;
+            alert("bạn đã tắt TV!");
+            }
+            else if(this.status==false)
+            {
+            this.status=true;
+            alert("bạn đã bật TV!");
+            }
+        }
+        
+        change_Channel()
+        {
+            if(this.status==false)
+            {
+                alert("tivi đang tắt, hãy bật TV để xem!");
+            }
+            else{
+            let order=prompt("bạn muốn đổi đến kênh nào?");
+            this.channel=order;
+            alert("TV đã đổi đến kênh "+this.channel);}
+        }
+        change_Volume()
+        {
+            if(this.status==false)
+            {
+                alert("tivi đang tắt, hãy bật TV để xem!");
+            }
+            else{
+            let order=prompt("bạn muốn âm lượng là bao nhiêu?");
+            this.volume=order;
+            alert("âm lượng của TV là "+this.volume);}
+        }
+        status_TV()
+        {
+            if(this.status==false)
+            {
+                alert("tivi đang tắt, hãy bật TV để xem!");
+            }
+            else{
+            alert("TV đang bật kênh "+this.channel);
+            alert("âm lượng của TV là: "+this.volume);
+            alert("TV đang bật");
+            }
+            
+        }
+
+    }
+
+    let tivi=new TV(1,5,false);
+    let Remote=new remote("1");
+</script>
+</body>
+</html>
