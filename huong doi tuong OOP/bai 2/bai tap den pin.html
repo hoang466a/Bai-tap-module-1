@@ -7,6 +7,108 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- https://tinyurl.com/hnwkkvk4 - đèn tắt -->
+    <!-- https://tinyurl.com/4mhb9wzj - đèn sáng -->
+    <img src="https://tinyurl.com/hnwkkvk4" width="400px" height="400px" id="myImage"/>
+    <br>
+    <button style="width:100px;height:80px" onclick="button.turnOn(lamp)">BẬT ĐÈN</button>
+    <button style="width:100px;height:80px" onclick="button.turnOff(lamp) ">TẮT ĐÈN</button>
+    <button style="width:100px;height:80px" onclick="button.connectTolamp(lamp);">NỐI ĐIỆN</button>
+    <script>
+        let id_image=document.getElementById("myImage");
+        class ButtonSwitch
+        {
+            constructor(Switch,Connect)
+            {
+                this.Switch=Switch;
+                this.Connect=Connect;
+            }
+
+            connectTolamp(lamp)
+            {
+                if (this.Connect==true)
+                {
+                    let check=confirm("đèn đã được kết nối, bạn có muốn ngắt kết nối hay không?");
+                    if(check)
+                    {
+                        alert("đã ngắt kết nối với đèn!");
+                        this.Connect=false;
+                        lamp.status=false;
+                        id_image.src="https://tinyurl.com/hnwkkvk4";
+                    }
+                    else {
+                        alert("công tắc vẫn kết nối với đèn!")
+                        }
+                }
+                else if (this.Connect==false)
+                {
+                    let check=confirm("đèn chưa được kết nối, bạn có muốn kết nối hay không?");
+                    if(check)
+                    {
+                        alert("đã kết nối với đèn!");
+                        this.Connect=true;
+                        if(this.Switch==true)
+                        {
+                            lamp.status=true;
+                            id_image.src="https://tinyurl.com/4mhb9wzj";
+                        }
+                    }
+                    else 
+                    {
+                        alert("công tắc vẫn chưa kết nối với đèn!")
+                        lamp.status=false;
+                        id_image.src="https://tinyurl.com/hnwkkvk4";
+                    }
+                }
+            }
+
+            turnOn(lamp)
+            {
+                this.Switch=true;
+                if(this.Connect==true)
+                {
+                    
+                    console.log(lamp.status);
+                    if(lamp.status===false)
+                    {
+                        
+                        lamp.status=true;
+                        id_image.src="https://tinyurl.com/4mhb9wzj";
+                        alert("đẫ bật đèn!");
+                    }
+                    else if(lamp.status==true)
+                    {
+                        alert("đèn vẫn đang bật!");
+                    }
+                }
+                else{
+
+                    alert("chưa kết nối với bóng đèn, hãy kết nối với bóng đèn!")
+                }
+            }
+
+            turnOff(lamp)
+            {
+                this.Switch=false;
+                lamp.status=false;
+                id_image.src="https://tinyurl.com/hnwkkvk4";
+                alert("bóng đèn đã tắt");
+            }
+        }
+        class Lamp
+        {
+            constructor(status)
+            {
+                this.status=status;
+            }
+        }
+        
+        let lamp=new Lamp(false);
+        let button=new ButtonSwitch(false,false);
+        
+        
+        
+
+    </script>
 </body>
 </html>
